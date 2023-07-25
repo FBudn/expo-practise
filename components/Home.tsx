@@ -18,6 +18,9 @@ export default function Home({ navigation }: any) {
       <Pressable onPress={() => navigation.navigate("Inputs")}>
         <Text>Go to Inputs component</Text>
       </Pressable>
+      <Pressable onPress={() => navigation.navigate("FlatListComponent")}>
+        <Text>Go to FlatListComponent</Text>
+      </Pressable>
     </View>
   );
 }
@@ -28,6 +31,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#eee5e5",
     alignItems: "center",
     justifyContent: "center",
-    gap: 100,
+    gap: 50,
   },
 });
