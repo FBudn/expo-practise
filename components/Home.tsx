@@ -15,6 +15,9 @@ export default function Home({ navigation }: any) {
       <Pressable onPress={() => navigation.navigate("Button")}>
         <Text>Go to Button component</Text>
       </Pressable>
+      <Pressable onPress={() => navigation.navigate("Inputs")}>
+        <Text>Go to Inputs component</Text>
+      </Pressable>
     </View>
   );
 }

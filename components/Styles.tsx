@@ -12,3 +12,9 @@ export const StyledText = styled.Text`
   ${fontWeight}
   ${color};
 `;
+
+export const StyledInput = styled.TextInput`
+  border: 1px;
+  background-color: white;
+  width: 97%;
+`;
