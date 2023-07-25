@@ -2,7 +2,7 @@
 /* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Platform, Pressable, StyleSheet, Text, View } from "react-native";
 
 const Button = ({ navigation }: any) => {
   const [count, setCount] = useState(0);
@@ -12,9 +12,18 @@ const Button = ({ navigation }: any) => {
       <View style={styles.countContainer}>
         <Text>Count: {count}</Text>
       </View>
-      <TouchableOpacity style={styles.button} onPress={onPress}>
+      <View style={styles.line} />
+      <TouchableOpacity
+        style={styles.button}
+        onPress={onPress}
+        hitSlop={{ top: 30 }}
+      >
         <Text>Press Here</Text>
       </TouchableOpacity>
+      <Text style={styles.whiteText}>
+        You can press button also in space under the line
+      </Text>
+      <Text style={styles.whiteText}>thanks to hitSlop</Text>
       <Pressable
         style={styles.pressable}
         onPress={() => navigation.navigate("Home")}
@@ -30,12 +39,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#75aefa",
     justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: 10,
   },
   button: {
     alignItems: "center",
     backgroundColor: "#DDDDDD",
     padding: 10,
+    marginTop: Platform.select({
+      ios: 10,
+      android: 55,
+    }),
+    width: 370,
   },
   countContainer: {
     alignItems: "center",
@@ -44,6 +59,14 @@ const styles = StyleSheet.create({
   pressable: {
     alignItems: "center",
     marginTop: 100,
+  },
+  line: {
+    width: "100%",
+    borderBottomColor: "rgb(213, 202, 202)",
+    borderBottomWidth: 2,
+  },
+  whiteText: {
+    color: "hsl(0, 0%, 100%)",
   },
 });
 
