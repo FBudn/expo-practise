@@ -21,6 +21,9 @@ export default function Home({ navigation }: any) {
       <Pressable onPress={() => navigation.navigate("FlatListComponent")}>
         <Text>Go to FlatListComponent</Text>
       </Pressable>
+      <Pressable onPress={() => navigation.navigate("WebViewComponent")}>
+        <Text>Go to WebViewComponent</Text>
+      </Pressable>
     </View>
   );
 }
@@ -28,7 +31,7 @@ export default function Home({ navigation }: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#eee5e5",
+    backgroundColor: "#ffffff",
     alignItems: "center",
     justifyContent: "center",
     gap: 50,
